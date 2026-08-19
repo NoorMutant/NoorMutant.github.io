@@ -26,7 +26,7 @@
 <meta name="twitter:title" content="Noor Muhammad — Frontend Developer">
 <meta name="twitter:description" content="Building market data platforms and stock exchange infrastructure for the MENA region.">
 <meta name="twitter:image" content="https://noormutant.github.io/assets/og.png">
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Person","name":"Noor Muhammad","url":"https://noormutant.github.io/","email":"mailto:noorszps@gmail.com","jobTitle":"Associate Frontend Developer","worksFor":{"@type":"Organization","name":"Mubasher Information Group"},"address":{"@type":"PostalAddress","addressLocality":"Rawalpindi","addressCountry":"PK"},"alumniOf":{"@type":"CollegeOrUniversity","name":"The Islamia University of Bahawalpur"},"knowsAbout":["Angular","TypeScript","RxJS","Java","Spring Boot","PostgreSQL"],"sameAs":["https://www.linkedin.com/in/noor-muhammad-b58443247/","https://github.com/NoorMutant"]},{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Noor Muhammad"},"url":"https://noormutant.github.io/","name":"Noor Muhammad, Frontend Developer","description":"Portfolio of Noor Muhammad, associate frontend developer building market data platforms and stock exchange infrastructure for the MENA region."}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Person","name":"Noor Muhammad","url":"https://noormutant.github.io/","email":"mailto:noorszps@gmail.com","jobTitle":"Associate Frontend Developer","worksFor":{"@type":"Organization","name":"Mubasher Information Group"},"address":{"@type":"PostalAddress","addressLocality":"Rawalpindi","addressCountry":"PK"},"alumniOf":{"@type":"CollegeOrUniversity","name":"The Islamia University of Bahawalpur"},"knowsAbout":["Angular","TypeScript","RxJS","Java","Spring Boot","PostgreSQL"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"CS50x, Introduction to Computer Science","recognizedBy":{"@type":"Organization","name":"Harvard University"}},{"@type":"EducationalOccupationalCredential","name":"CS50 AI, Introduction to Artificial Intelligence with Python","recognizedBy":{"@type":"Organization","name":"Harvard University"}},{"@type":"EducationalOccupationalCredential","name":"Java Programming I","recognizedBy":{"@type":"Organization","name":"University of Helsinki"}},{"@type":"EducationalOccupationalCredential","name":"Data Structures and Algorithms in Python","recognizedBy":{"@type":"Organization","name":"Boot.dev"}},{"@type":"EducationalOccupationalCredential","name":"Version Control","recognizedBy":{"@type":"Organization","name":"Meta"}},{"@type":"EducationalOccupationalCredential","name":"Introduction to Databases","recognizedBy":{"@type":"Organization","name":"Meta"}},{"@type":"EducationalOccupationalCredential","name":"Successful Negotiation","recognizedBy":{"@type":"Organization","name":"University of Michigan"}},{"@type":"EducationalOccupationalCredential","name":"Mindware, Critical Thinking for the Information Age","recognizedBy":{"@type":"Organization","name":"University of Michigan"}},{"@type":"EducationalOccupationalCredential","name":"Stock Valuation with Comparable Companies Analysis","recognizedBy":{"@type":"Organization","name":"Coursera"}},{"@type":"EducationalOccupationalCredential","name":"Excel Skills for Business, Essentials","recognizedBy":{"@type":"Organization","name":"Macquarie University"}},{"@type":"EducationalOccupationalCredential","name":"Google Sheets","recognizedBy":{"@type":"Organization","name":"Google Cloud"}},{"@type":"EducationalOccupationalCredential","name":"Teamwork Skills, Communicating Effectively in Groups","recognizedBy":{"@type":"Organization","name":"University of Colorado Boulder"}}],"sameAs":["https://www.linkedin.com/in/noor-muhammad-b58443247/","https://github.com/NoorMutant"]},{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Noor Muhammad"},"url":"https://noormutant.github.io/","name":"Noor Muhammad, Frontend Developer","description":"Portfolio of Noor Muhammad, associate frontend developer building market data platforms and stock exchange infrastructure for the MENA region."}]</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap">
@@ -168,15 +168,28 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
 }
 @media print{body::before,body::after,header,.cur,.cur-ring{display:none}}
 
+/* ===== certifications ===== */
+.certs{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--glass-line)}
+.certs li{display:flex;flex-wrap:wrap;gap:.25rem 1rem;justify-content:space-between;align-items:baseline;padding:.85rem .2rem;border-bottom:1px solid var(--glass-line);transition:padding-inline-start .35s var(--ease),color .35s}
+.certs li:hover{padding-inline-start:.9rem;color:var(--fg)}
+.certs span{font:400 .95rem/1.4 "IBM Plex Sans",sans-serif}
+.certs em{font:400 .72rem/1.4 "IBM Plex Mono",monospace;font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--jade);flex:none}
+
 /* ===== live demo ===== */
-.demo{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(17rem,100%),1fr));margin-top:1.5rem}
-.frame{border:1px solid var(--glass-line);border-radius:var(--r);overflow:hidden;background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.frame figcaption{font:400 .68rem/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--jade);padding:.85rem 1rem;border-bottom:1px solid var(--glass-line)}
-.frame iframe{display:block;width:100%;height:11rem;border:0;background:transparent;color-scheme:normal}
-.bus{grid-column:1/-1;border:1px solid var(--glass-line);border-radius:var(--r);padding:1rem;background:var(--glass);font:400 .76rem/1.7 "IBM Plex Mono",monospace;color:var(--dim);max-height:11rem;overflow:auto}
+.steps{list-style:none;margin:1.7rem 0 0;padding:0;display:grid;gap:.55rem;max-width:62ch}
+.steps li{font:400 .9rem/1.55 "IBM Plex Sans",sans-serif;color:var(--dim);display:flex;gap:.75rem;align-items:baseline}
+.steps b{font:500 .7rem/1.7 "IBM Plex Mono",monospace;color:var(--amber);border:1px solid var(--glass-line);border-radius:50%;min-inline-size:1.7rem;text-align:center;flex:none}
+.demo{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(17rem,100%),1fr));margin-top:1.9rem}
+.frame{margin:0;border:1px solid var(--glass-line);border-radius:var(--r);overflow:hidden;background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.frame figcaption{font:500 .68rem/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--fg);padding:.9rem 1rem;border-bottom:1px solid var(--glass-line)}
+.frame figcaption span{color:var(--jade);margin-inline-start:.5rem}
+.frame iframe{display:block;width:100%;height:13.5rem;border:0;background:transparent}
+.bus{grid-column:1/-1;border:1px solid var(--glass-line);border-radius:var(--r);padding:1.05rem 1.2rem;background:var(--glass);font:400 .78rem/1.9 "IBM Plex Mono",monospace;color:var(--dim)}
+.bus p{margin:0;max-width:none}
+.bus .hint{font-family:"IBM Plex Sans",sans-serif;line-height:1.65}
 .bus b{color:var(--amber);font-weight:500}
 .bus i{color:var(--jade);font-style:normal}
-.bus p{margin:0;max-width:none}
+.bus .no{color:#D5564E}
 </style>
 </head>
 <body>
@@ -260,17 +273,18 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
   </section>
 
   <section id="demo" class="wrap">
-    <span class="eyebrow rv">Live</span>
+    <span class="eyebrow rv">Live, not a screenshot</span>
     <h2 class="rv">Two frames, one application</h2>
-    <p class="lead rv">This is the technique behind the investor relations work, running here on this page. The two panels below are real sandboxed iframes on a different origin to this document. They cannot navigate themselves and they do not know who you are. Click inside them and watch the message bus.</p>
+    <p class="lead rv">This is the technique behind the investor relations work, running on this page. Both panels below are real sandboxed iframes on a different origin. They cannot navigate themselves and they never learn who you are. Every click becomes a request to this page, which decides what happens.</p>
+    <ol class="steps rv">
+      <li><b>1</b> Press a button inside a panel. It cannot act on its own, it can only ask.</li>
+      <li><b>2</b> This page checks the request against a routing guard, then allows or refuses it.</li>
+      <li><b>3</b> Allowed views are rendered back into the panel that asked for them.</li>
+    </ol>
     <div class="demo rv">
-      <figure class="frame" style="margin:0"><figcaption>Widget A, market</figcaption>
-        <iframe id="fa" title="Embedded market widget" sandbox="allow-scripts" srcdoc="&lt;style&gt;body{margin:0;padding:14px;font:14px/1.5 ui-sans-serif,system-ui;color:#EAE3D8;background:transparent}button{font:inherit;cursor:pointer;background:rgba(226,112,58,.14);color:#E2703A;border:1px solid rgba(226,112,58,.45);border-radius:9px;padding:.5rem .8rem;margin:.2rem .3rem .2rem 0}h4{margin:0 0 .5rem;font-weight:500}p{margin:.4rem 0 .7rem;opacity:.65;font-size:13px}&lt;/style&gt;&lt;h4 id=t&gt;Overview&lt;/h4&gt;&lt;p id=w&gt;No watchlist loaded&lt;/p&gt;&lt;button data-go=chart&gt;Open chart&lt;/button&gt;&lt;button data-go=news&gt;Open news&lt;/button&gt;&lt;script&gt;document.body.addEventListener(&quot;click&quot;,function(e){var b=e.target.closest(&quot;[data-go]&quot;);if(!b)return;parent.postMessage({from:&quot;A&quot;,type:&quot;navigate&quot;,to:b.dataset.go},&quot;*&quot;)});addEventListener(&quot;message&quot;,function(e){var d=e.data||{};if(d.type===&quot;render&quot;)document.getElementById(&quot;t&quot;).textContent=d.view;if(d.type===&quot;identity&quot;)document.getElementById(&quot;w&quot;).textContent=&quot;Watchlist: &quot;+d.items.join(&quot;, &quot;)})&lt;/script&gt;"></iframe>
-      </figure>
-      <figure class="frame" style="margin:0"><figcaption>Widget B, disclosures</figcaption>
-        <iframe id="fb" title="Embedded disclosures widget" sandbox="allow-scripts" srcdoc="&lt;style&gt;body{margin:0;padding:14px;font:14px/1.5 ui-sans-serif,system-ui;color:#EAE3D8;background:transparent}button{font:inherit;cursor:pointer;background:rgba(134,194,165,.14);color:#86C2A5;border:1px solid rgba(134,194,165,.45);border-radius:9px;padding:.5rem .8rem;margin:.2rem .3rem .2rem 0}h4{margin:0 0 .5rem;font-weight:500}p{margin:.4rem 0 .7rem;opacity:.65;font-size:13px}&lt;/style&gt;&lt;h4 id=t&gt;Filings&lt;/h4&gt;&lt;p id=w&gt;No watchlist loaded&lt;/p&gt;&lt;button data-go=chart&gt;Request chart&lt;/button&gt;&lt;button data-go=blocked&gt;Request admin&lt;/button&gt;&lt;script&gt;document.body.addEventListener(&quot;click&quot;,function(e){var b=e.target.closest(&quot;[data-go]&quot;);if(!b)return;parent.postMessage({from:&quot;B&quot;,type:&quot;navigate&quot;,to:b.dataset.go},&quot;*&quot;)});addEventListener(&quot;message&quot;,function(e){var d=e.data||{};if(d.type===&quot;render&quot;)document.getElementById(&quot;t&quot;).textContent=d.view;if(d.type===&quot;identity&quot;)document.getElementById(&quot;w&quot;).textContent=&quot;Watchlist: &quot;+d.items.join(&quot;, &quot;)})&lt;/script&gt;"></iframe>
-      </figure>
-      <div class="bus" id="bus" role="log" aria-live="polite" aria-label="Message bus"><p>Waiting. Click a button inside either panel.</p></div>
+      <figure class="frame"><figcaption>Panel A <span>market widget</span></figcaption><iframe id="fa" title="Embedded market widget" sandbox="allow-scripts"></iframe></figure>
+      <figure class="frame"><figcaption>Panel B <span>disclosures widget</span></figcaption><iframe id="fb" title="Embedded disclosures widget" sandbox="allow-scripts"></iframe></figure>
+      <div class="bus" id="bus" role="log" aria-live="polite" aria-label="Message bus between this page and the panels"><p class="hint">Messages appear here. Try <b>Price chart</b> in Panel A, then <b>Admin console</b> in Panel B to watch this page refuse a view that panel is not permitted to show.</p></div>
     </div>
   </section>
 
@@ -281,7 +295,7 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
       <article class="card rv">
         <span class="tag">Education</span>
         <h3>BS Computer Science</h3>
-        <p>The Islamia University of Bahawalpur, 2021 to 2025. Harvard CS50x and CS50 AI, Java Programming I at the University of Helsinki, and data structures and algorithms at Boot.dev.</p>
+        <p>The Islamia University of Bahawalpur, 2021 to 2025. Twelve certifications alongside it, listed in full below.</p>
       </article>
       <article class="card rv">
         <span class="tag">Earlier</span>
@@ -294,6 +308,25 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
         <p>Led a university arts and photography society of fifteen. Rotated the chair through the cabinet so every member could run it alone, which freed me to plan instead of firefight.</p>
       </article>
     </div>
+  </section>
+
+  <section id="certifications" class="wrap">
+    <span class="eyebrow rv">Certifications</span>
+    <h2 class="rv">Twelve, in full</h2>
+    <ul class="certs rv">
+      <li><span>CS50x, Introduction to Computer Science</span><em>Harvard University</em></li>
+      <li><span>CS50 AI, Introduction to Artificial Intelligence with Python</span><em>Harvard University</em></li>
+      <li><span>Java Programming I</span><em>University of Helsinki</em></li>
+      <li><span>Data Structures and Algorithms in Python</span><em>Boot.dev</em></li>
+      <li><span>Version Control</span><em>Meta</em></li>
+      <li><span>Introduction to Databases</span><em>Meta</em></li>
+      <li><span>Successful Negotiation</span><em>University of Michigan</em></li>
+      <li><span>Mindware, Critical Thinking for the Information Age</span><em>University of Michigan</em></li>
+      <li><span>Stock Valuation with Comparable Companies Analysis</span><em>Coursera</em></li>
+      <li><span>Excel Skills for Business, Essentials</span><em>Macquarie University</em></li>
+      <li><span>Google Sheets</span><em>Google Cloud</em></li>
+      <li><span>Teamwork Skills, Communicating Effectively in Groups</span><em>University of Colorado Boulder</em></li>
+    </ul>
   </section>
 
   <section id="contact" class="wrap">
@@ -371,44 +404,81 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
   });
 
 
-  /* ---- live postMessage demo: the parent is the only router ---- */
+  /* ---- live postMessage demo: this page is the only router ---- */
   (function(){
     var fa=document.getElementById("fa"), fb=document.getElementById("fb"), bus=document.getElementById("bus");
     if(!fa||!fb||!bus)return;
-    /* the routing guard: which frame is allowed to show which view */
-    var allow={A:["chart","news","overview"],B:["chart","filings"]};
-    var names={A:fa,B:fb};
-    function log(html){
-      var p=document.createElement("p"); p.innerHTML=html; bus.appendChild(p);
-      while(bus.children.length>7)bus.removeChild(bus.firstChild);
-      bus.scrollTop=bus.scrollHeight;
+    var INNER="<script>document.body.addEventListener(\\\"click\\\",function(e){var b=e.target.closest(\\\"[data-go]\\\");if(!b)return;parent.postMessage({type:\\\"navigate\\\",to:b.dataset.go,label:b.dataset.label},\\\"*\\\")});addEventListener(\\\"message\\\",function(e){var d=e.data||{};var v=document.getElementById(\\\"v\\\");if(d.type===\\\"render\\\"){v.textContent=\\\"Showing: \\\"+d.label;v.className=\\\"view ok\\\";}if(d.type===\\\"refuse\\\"){v.textContent=\\\"Refused by the page: \\\"+d.label;v.className=\\\"view no\\\";}if(d.type===\\\"identity\\\"){v.textContent=\\\"Overview for \\\"+d.items.join(\\\", \\\");}if(d.type===\\\"theme\\\"){document.body.className=d.mode===\\\"light\\\"?\\\"light\\\":\\\"\\\";}});<\\/script>";
+
+    function doc(accent,title,rows){
+      return "<!DOCTYPE html><html lang=en><head><meta charset=utf-8><style>"+
+        "body{margin:0;padding:15px;font:14px/1.55 ui-sans-serif,system-ui,sans-serif;background:transparent;color:#EAE3D8;transition:color .3s}"+
+        "body.light{color:#14100C}"+
+        "h4{margin:0 0 2px;font-size:14px;font-weight:600}"+
+        ".sub{font-size:12px;opacity:.6;margin:0 0 11px}"+
+        ".view{font-size:12px;margin:0 0 12px;padding:8px 10px;border-radius:8px;border:1px dashed currentColor;opacity:.85}"+
+        ".view.ok{border-style:solid;border-color:"+accent+";color:"+accent+";opacity:1}"+
+        ".view.no{border-style:solid;border-color:#D5564E;color:#D5564E;opacity:1}"+
+        "button{display:block;width:100%;text-align:left;font:13px/1.3 inherit;cursor:pointer;background:"+accent+"22;color:"+accent+";border:1px solid "+accent+"70;border-radius:9px;padding:9px 11px;margin:0 0 7px}"+
+        "button:hover{background:"+accent+"38}"+
+        "button:focus-visible{outline:2px solid "+accent+";outline-offset:2px}"+
+        "button small{display:block;opacity:.72;font-size:11px;margin-top:3px;color:inherit}"+
+        "@media (prefers-reduced-motion:reduce){*{transition:none!important}}"+
+      "</style></head><body><h4>"+title+"</h4>"+
+      "<p class=sub>Sandboxed iframe. It cannot navigate itself.</p>"+
+      "<p class=view id=v>Waiting for the page</p>"+rows+INNER+"</body></html>";
+    }
+    function btn(go,label,desc){
+      return "<button data-go="+go+" data-label=\""+label+"\">"+label+"<small>"+desc+"</small></button>";
+    }
+    fa.srcdoc=doc("#E2703A","Market widget",
+      btn("chart","Price chart","this panel is allowed to show it")+
+      btn("news","Company news","this panel is allowed to show it"));
+    fb.srcdoc=doc("#86C2A5","Disclosures widget",
+      btn("filings","Regulatory filings","this panel is allowed to show it")+
+      btn("admin","Admin console","not permitted, the page will refuse"));
+
+    var allow={A:["chart","news"],B:["filings"]}, frames={};
+    function log(html,cls){
+      var h=bus.querySelector(".hint"); if(h)h.remove();
+      var p=document.createElement("p"); if(cls)p.className=cls; p.innerHTML=html; bus.appendChild(p);
+      while(bus.children.length>5)bus.removeChild(bus.firstChild);
     }
     addEventListener("message",function(e){
-      /* frames are sandboxed without allow-same-origin, so origin is "null".
-         identity is established by comparing the source window instead. */
+      /* the frames are sandboxed without allow-same-origin, so their origin is
+         "null". identity comes from comparing the source window, never from
+         anything inside the message itself. */
       var who=e.source===fa.contentWindow?"A":e.source===fb.contentWindow?"B":null;
       if(!who)return;
       var d=e.data||{}; if(d.type!=="navigate")return;
-      log("&larr; <b>"+who+"</b> requests <i>"+d.to+"</i>");
+      log("Panel <b>"+who+"</b> asks for <i>"+d.label+"</i>");
       if(allow[who].indexOf(d.to)===-1){
-        log("&nbsp;&nbsp;parent refuses, not permitted for "+who);
+        log("&nbsp;&nbsp;the page <span class=no>refuses</span>, Panel "+who+" may not show that");
+        frames[who].contentWindow.postMessage({type:"refuse",label:d.label},"*");
         return;
       }
-      log("&nbsp;&nbsp;parent routes &rarr; renders <i>"+d.to+"</i> in <b>"+who+"</b>");
-      names[who].contentWindow.postMessage({type:"render",view:d.to},"*");
+      log("&nbsp;&nbsp;the page allows it and renders <i>"+d.label+"</i> into Panel "+who);
+      frames[who].contentWindow.postMessage({type:"render",label:d.label},"*");
     });
-    /* personalisation pushed down once frames are ready: the widgets never
-       learn who the user is, they just receive what to draw. */
-    var ready=0;
-    function push(){
-      if(++ready<2)return;
-      [fa,fb].forEach(function(f){
-        f.contentWindow.postMessage({type:"identity",items:["ARAMCO","EMAAR","QNB"]},"*");
+    function push(mode){
+      [fa,fb].forEach(function(x){
+        try{x.contentWindow.postMessage({type:"theme",mode:mode},"*");}catch(err){}
       });
-      log("parent pushed watchlist down from its own session");
     }
-    fa.addEventListener("load",push); fb.addEventListener("load",push);
-    if(fa.contentDocument&&fa.contentDocument.readyState==="complete"){push();push();}
+    var ready=0;
+    function up(f,k){
+      frames[k]=f;
+      if(++ready<2)return;
+      push(document.documentElement.dataset.theme);
+      [fa,fb].forEach(function(x){x.contentWindow.postMessage({type:"identity",items:["ARAMCO","EMAAR"]},"*");});
+      log("the page pushed a watchlist down from its own session, neither panel asked who you are");
+    }
+    fa.addEventListener("load",function(){up(fa,"A");});
+    fb.addEventListener("load",function(){up(fb,"B");});
+    var tb=document.getElementById("themeBtn");
+    if(tb)tb.addEventListener("click",function(){
+      setTimeout(function(){push(document.documentElement.dataset.theme);},0);
+    });
   })();
 
   /* custom cursor: fine pointers only, off for touch and reduced motion */

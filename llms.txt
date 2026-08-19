@@ -22,3 +22,6 @@ Angular, TypeScript, RxJS, Ember, Java, Spring Boot, PostgreSQL, Python.
 
 ## Background
 BS Computer Science, The Islamia University of Bahawalpur, 2021 to 2025. Harvard CS50x and CS50 AI, Java Programming I (University of Helsinki), data structures and algorithms (Boot.dev). Earlier: Python developer at DevFor. President of a university arts and photography society.
+
+## Certifications
+CS50x Introduction to Computer Science (Harvard). CS50 AI Introduction to Artificial Intelligence with Python (Harvard). Java Programming I (University of Helsinki). Data Structures and Algorithms in Python (Boot.dev). Version Control (Meta). Introduction to Databases (Meta). Successful Negotiation (University of Michigan). Mindware, Critical Thinking for the Information Age (University of Michigan). Stock Valuation with Comparable Companies Analysis (Coursera). Excel Skills for Business Essentials (Macquarie University). Google Sheets (Google Cloud). Teamwork Skills, Communicating Effectively in Groups (University of Colorado Boulder).
