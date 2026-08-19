@@ -1,27 +1,9 @@
-# Noor Muhammad – Portfolio Website
+# noormutant.github.io
 
-Welcome to my personal portfolio website, built to showcase my skills, projects, and professional background.
+Personal site of Noor Muhammad. One static page, hand written, no framework and no build step.
 
-## 🌐 Live Site
+Single `index.html` carrying its own CSS and JavaScript. Glassmorphism surfaces over an amber and jade palette, Fraunces display type, a custom cursor on fine pointers only, scroll reveals, and a theme toggle that follows the system by default and remembers a manual choice.
 
-[https://noormutant.github.io](https://noormutant.github.io)
+Handles reduced motion, touch input, missing JavaScript, and browsers without `backdrop-filter`.
 
-## 📄 About
-
-This portfolio highlights my journey as a software developer, featuring my resume, contact information, and links to my projects.
-
-## 🛠️ Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript
-
-## 📬 Contact
-
-- 📧 Email: noorszps@gmail.com
-- 📱 Phone: +92 342 1379859
-- 📍 Location: Rahim Yar Khan, Punjab, Pakistan
-
-## 📌 License
-
-This project is open-source and available under the [MIT License](LICENSE).
+Live at https://noormutant.github.io
