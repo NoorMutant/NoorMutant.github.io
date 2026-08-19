@@ -11,7 +11,11 @@
 <link rel="canonical" href="https://noormutant.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230A0E0D%27/%3E%3Cpath d=%27M20 46V18h5l14 20V18h5v28h-5L25 26v20z%27 fill=%27%23E2703A%27/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230A0E0D%27/%3E%3Cpath d=%27M20 46V18h5l14 20V18h5v28h-5L25 26v20z%27 fill=%27%23E2703A%27/%3E%3C/svg%3E">
-<meta property="og:type" content="website">
+<meta name="author" content="Noor Muhammad">
+<meta property="og:site_name" content="Noor Muhammad">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="Noor Muhammad, frontend developer">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://noormutant.github.io/">
 <meta property="og:title" content="Noor Muhammad — Frontend Developer">
 <meta property="og:description" content="Building market data platforms and stock exchange infrastructure for the MENA region. Angular, TypeScript, Java Spring Boot.">
@@ -22,13 +26,14 @@
 <meta name="twitter:title" content="Noor Muhammad — Frontend Developer">
 <meta name="twitter:description" content="Building market data platforms and stock exchange infrastructure for the MENA region.">
 <meta name="twitter:image" content="https://noormutant.github.io/assets/og.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Noor Muhammad","url":"https://noormutant.github.io/","email":"mailto:noorszps@gmail.com","jobTitle":"Associate Frontend Developer","worksFor":{"@type":"Organization","name":"Mubasher Information Group"},"address":{"@type":"PostalAddress","addressLocality":"Rawalpindi","addressCountry":"PK"},"alumniOf":{"@type":"CollegeOrUniversity","name":"The Islamia University of Bahawalpur"},"knowsAbout":["Angular","TypeScript","RxJS","Java","Spring Boot","PostgreSQL"],"sameAs":["https://www.linkedin.com/in/noor-muhammad-b58443247/","https://github.com/NoorMutant"]}</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Person","name":"Noor Muhammad","url":"https://noormutant.github.io/","email":"mailto:noorszps@gmail.com","jobTitle":"Associate Frontend Developer","worksFor":{"@type":"Organization","name":"Mubasher Information Group"},"address":{"@type":"PostalAddress","addressLocality":"Rawalpindi","addressCountry":"PK"},"alumniOf":{"@type":"CollegeOrUniversity","name":"The Islamia University of Bahawalpur"},"knowsAbout":["Angular","TypeScript","RxJS","Java","Spring Boot","PostgreSQL"],"sameAs":["https://www.linkedin.com/in/noor-muhammad-b58443247/","https://github.com/NoorMutant"]},{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Noor Muhammad"},"url":"https://noormutant.github.io/","name":"Noor Muhammad, Frontend Developer","description":"Portfolio of Noor Muhammad, associate frontend developer building market data platforms and stock exchange infrastructure for the MENA region."}]</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script>
 /* set theme before first paint so there is no flash */
-(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme:light)").matches?"light":"dark";document.documentElement.dataset.theme=t;}catch(e){}})();
+(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme:light)").matches?"light":"dark";document.documentElement.dataset.theme=t;}catch(e){}document.documentElement.className="js";})();
 </script>
 <style>
 /* ================= tokens ================= */
@@ -139,7 +144,8 @@ nav a:hover{color:var(--fg)}
 footer{border-top:1px solid var(--glass-line); padding-block:2.2rem; color:var(--dim); font:400 .78rem/1.6 "IBM Plex Mono",monospace; display:flex; flex-wrap:wrap; gap:.6rem 1.4rem; justify-content:space-between}
 
 /* ================= reveal ================= */
-.rv{opacity:0; transform:translateY(18px); transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.js .rv{opacity:0; transform:translateY(18px); transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv.in{opacity:1;transform:none}
 .rv.in{opacity:1; transform:none}
 
 /* ================= custom cursor ================= */
@@ -161,6 +167,16 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
   .cur,.cur-ring{display:none}
 }
 @media print{body::before,body::after,header,.cur,.cur-ring{display:none}}
+
+/* ===== live demo ===== */
+.demo{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(17rem,100%),1fr));margin-top:1.5rem}
+.frame{border:1px solid var(--glass-line);border-radius:var(--r);overflow:hidden;background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.frame figcaption{font:400 .68rem/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--jade);padding:.85rem 1rem;border-bottom:1px solid var(--glass-line)}
+.frame iframe{display:block;width:100%;height:11rem;border:0;background:transparent;color-scheme:normal}
+.bus{grid-column:1/-1;border:1px solid var(--glass-line);border-radius:var(--r);padding:1rem;background:var(--glass);font:400 .76rem/1.7 "IBM Plex Mono",monospace;color:var(--dim);max-height:11rem;overflow:auto}
+.bus b{color:var(--amber);font-weight:500}
+.bus i{color:var(--jade);font-style:normal}
+.bus p{margin:0;max-width:none}
 </style>
 </head>
 <body>
@@ -173,6 +189,7 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
     <nav><ul>
       <li class="hide-sm"><a href="#work">Work</a></li>
       <li class="hide-sm"><a href="#approach">Approach</a></li>
+      <li class="hide-sm"><a href="#demo">Live</a></li>
       <li class="hide-sm"><a href="#background">Background</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><button class="toggle" id="themeBtn" aria-label="Switch colour theme" aria-pressed="false">
@@ -187,7 +204,7 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
   <section class="hero wrap">
     <div>
       <span class="eyebrow rv">Rawalpindi, Pakistan</span>
-      <h1 id="head">Noor Muhammad</h1>
+      <h1 id="head" aria-label="Noor Muhammad">Noor Muhammad</h1>
       <p class="lead rv">Associate Frontend Developer at Mubasher Information Group. I build market data platforms and stock exchange infrastructure for the MENA region, where the data is regulated and being wrong is expensive.</p>
       <div class="meta rv">
         <span class="chip">Angular</span><span class="chip">TypeScript</span><span class="chip">RxJS</span>
@@ -242,6 +259,21 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
     <p class="lead rv">On my own project, transactions were deadlocking while the connection pool starved. Rather than tuning the numbers, every transaction now takes its row locks in one consistent order, which makes a lock cycle impossible, and requests are batched behind a debounce so the pool is never flooded. One invariant at the source instead of patches at every call site. That is the habit I bring to production work.</p>
   </section>
 
+  <section id="demo" class="wrap">
+    <span class="eyebrow rv">Live</span>
+    <h2 class="rv">Two frames, one application</h2>
+    <p class="lead rv">This is the technique behind the investor relations work, running here on this page. The two panels below are real sandboxed iframes on a different origin to this document. They cannot navigate themselves and they do not know who you are. Click inside them and watch the message bus.</p>
+    <div class="demo rv">
+      <figure class="frame" style="margin:0"><figcaption>Widget A, market</figcaption>
+        <iframe id="fa" title="Embedded market widget" sandbox="allow-scripts" srcdoc="&lt;style&gt;body{margin:0;padding:14px;font:14px/1.5 ui-sans-serif,system-ui;color:#EAE3D8;background:transparent}button{font:inherit;cursor:pointer;background:rgba(226,112,58,.14);color:#E2703A;border:1px solid rgba(226,112,58,.45);border-radius:9px;padding:.5rem .8rem;margin:.2rem .3rem .2rem 0}h4{margin:0 0 .5rem;font-weight:500}p{margin:.4rem 0 .7rem;opacity:.65;font-size:13px}&lt;/style&gt;&lt;h4 id=t&gt;Overview&lt;/h4&gt;&lt;p id=w&gt;No watchlist loaded&lt;/p&gt;&lt;button data-go=chart&gt;Open chart&lt;/button&gt;&lt;button data-go=news&gt;Open news&lt;/button&gt;&lt;script&gt;document.body.addEventListener(&quot;click&quot;,function(e){var b=e.target.closest(&quot;[data-go]&quot;);if(!b)return;parent.postMessage({from:&quot;A&quot;,type:&quot;navigate&quot;,to:b.dataset.go},&quot;*&quot;)});addEventListener(&quot;message&quot;,function(e){var d=e.data||{};if(d.type===&quot;render&quot;)document.getElementById(&quot;t&quot;).textContent=d.view;if(d.type===&quot;identity&quot;)document.getElementById(&quot;w&quot;).textContent=&quot;Watchlist: &quot;+d.items.join(&quot;, &quot;)})&lt;/script&gt;"></iframe>
+      </figure>
+      <figure class="frame" style="margin:0"><figcaption>Widget B, disclosures</figcaption>
+        <iframe id="fb" title="Embedded disclosures widget" sandbox="allow-scripts" srcdoc="&lt;style&gt;body{margin:0;padding:14px;font:14px/1.5 ui-sans-serif,system-ui;color:#EAE3D8;background:transparent}button{font:inherit;cursor:pointer;background:rgba(134,194,165,.14);color:#86C2A5;border:1px solid rgba(134,194,165,.45);border-radius:9px;padding:.5rem .8rem;margin:.2rem .3rem .2rem 0}h4{margin:0 0 .5rem;font-weight:500}p{margin:.4rem 0 .7rem;opacity:.65;font-size:13px}&lt;/style&gt;&lt;h4 id=t&gt;Filings&lt;/h4&gt;&lt;p id=w&gt;No watchlist loaded&lt;/p&gt;&lt;button data-go=chart&gt;Request chart&lt;/button&gt;&lt;button data-go=blocked&gt;Request admin&lt;/button&gt;&lt;script&gt;document.body.addEventListener(&quot;click&quot;,function(e){var b=e.target.closest(&quot;[data-go]&quot;);if(!b)return;parent.postMessage({from:&quot;B&quot;,type:&quot;navigate&quot;,to:b.dataset.go},&quot;*&quot;)});addEventListener(&quot;message&quot;,function(e){var d=e.data||{};if(d.type===&quot;render&quot;)document.getElementById(&quot;t&quot;).textContent=d.view;if(d.type===&quot;identity&quot;)document.getElementById(&quot;w&quot;).textContent=&quot;Watchlist: &quot;+d.items.join(&quot;, &quot;)})&lt;/script&gt;"></iframe>
+      </figure>
+      <div class="bus" id="bus" role="log" aria-live="polite" aria-label="Message bus"><p>Waiting. Click a button inside either panel.</p></div>
+    </div>
+  </section>
+
   <section id="background" class="wrap">
     <span class="eyebrow rv">Background</span>
     <h2 class="rv">Before and alongside</h2>
@@ -269,14 +301,14 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
     <h2 class="rv">Say hello</h2>
     <p class="rv"><a class="big-link" href="mailto:noorszps@gmail.com">noorszps@gmail.com</a></p>
     <div class="meta rv" style="margin-top:2rem">
-      <a class="chip" href="https://www.linkedin.com/in/noor-muhammad-b58443247/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="chip" href="https://github.com/NoorMutant" target="_blank" rel="noopener">GitHub</a>
+      <a class="chip" href="https://www.linkedin.com/in/noor-muhammad-b58443247/" target="_blank" rel="me noopener">LinkedIn</a>
+      <a class="chip" href="https://github.com/NoorMutant" target="_blank" rel="me noopener">GitHub</a>
       <a class="chip" href="https://drive.google.com/file/d/1sqizlP73ALhBEn-fa6lcqaB9_A3ACTMI/view?usp=sharing" target="_blank" rel="noopener">CV</a>
     </div>
   </section>
 </main>
 
-<footer class="wrap"><span>Noor Muhammad</span><span>Built by hand. No frameworks.</span></footer>
+<footer class="wrap"><span>Noor Muhammad</span><span><a href="mailto:noorszps@gmail.com">noorszps@gmail.com</a></span><span>Built by hand. No frameworks.</span></footer>
 
 <script>
 (function(){
@@ -337,6 +369,47 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
       c.style.setProperty("--my",((e.clientY-r.top)/r.height*100)+"%");
     },{passive:true});
   });
+
+
+  /* ---- live postMessage demo: the parent is the only router ---- */
+  (function(){
+    var fa=document.getElementById("fa"), fb=document.getElementById("fb"), bus=document.getElementById("bus");
+    if(!fa||!fb||!bus)return;
+    /* the routing guard: which frame is allowed to show which view */
+    var allow={A:["chart","news","overview"],B:["chart","filings"]};
+    var names={A:fa,B:fb};
+    function log(html){
+      var p=document.createElement("p"); p.innerHTML=html; bus.appendChild(p);
+      while(bus.children.length>7)bus.removeChild(bus.firstChild);
+      bus.scrollTop=bus.scrollHeight;
+    }
+    addEventListener("message",function(e){
+      /* frames are sandboxed without allow-same-origin, so origin is "null".
+         identity is established by comparing the source window instead. */
+      var who=e.source===fa.contentWindow?"A":e.source===fb.contentWindow?"B":null;
+      if(!who)return;
+      var d=e.data||{}; if(d.type!=="navigate")return;
+      log("&larr; <b>"+who+"</b> requests <i>"+d.to+"</i>");
+      if(allow[who].indexOf(d.to)===-1){
+        log("&nbsp;&nbsp;parent refuses, not permitted for "+who);
+        return;
+      }
+      log("&nbsp;&nbsp;parent routes &rarr; renders <i>"+d.to+"</i> in <b>"+who+"</b>");
+      names[who].contentWindow.postMessage({type:"render",view:d.to},"*");
+    });
+    /* personalisation pushed down once frames are ready: the widgets never
+       learn who the user is, they just receive what to draw. */
+    var ready=0;
+    function push(){
+      if(++ready<2)return;
+      [fa,fb].forEach(function(f){
+        f.contentWindow.postMessage({type:"identity",items:["ARAMCO","EMAAR","QNB"]},"*");
+      });
+      log("parent pushed watchlist down from its own session");
+    }
+    fa.addEventListener("load",push); fb.addEventListener("load",push);
+    if(fa.contentDocument&&fa.contentDocument.readyState==="complete"){push();push();}
+  })();
 
   /* custom cursor: fine pointers only, off for touch and reduced motion */
   var fine=matchMedia("(hover:hover) and (pointer:fine)");

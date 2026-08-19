@@ -1,0 +1,24 @@
+# Noor Muhammad
+
+> Associate Frontend Developer at Mubasher Information Group, based in Rawalpindi, Pakistan. Builds market data platforms and stock exchange infrastructure for the MENA region.
+
+Contact: noorszps@gmail.com
+LinkedIn: https://www.linkedin.com/in/noor-muhammad-b58443247/
+GitHub: https://github.com/NoorMutant
+CV: https://drive.google.com/file/d/1sqizlP73ALhBEn-fa6lcqaB9_A3ACTMI/view?usp=sharing
+
+## Stack
+Angular, TypeScript, RxJS, Ember, Java, Spring Boot, PostgreSQL, Python.
+
+## Work
+- Live market data platform: real time indices, intraday charting, company and fund data for MENA markets.
+- Investor relations widgets: embeddable widgets delivering live market data into the sites of financial institutions. A parent application routes navigation and pushes personalisation into sandboxed frames over postMessage, so a composed site behaves as one application. A working demo of this technique runs on the site.
+- National stock exchange website: frontend and backend, live prices, listings and regulatory disclosures.
+- Private market platform: crawlers, scheduled jobs, and admin tooling giving control over stale records.
+
+## Projects
+- Rhova (https://rhova.work): productivity workspace, Angular Signals, Spring Boot, PostgreSQL, bi directional Google Calendar sync. Resolved deadlocks and connection pool starvation by ordering pessimistic row locks consistently and batching requests behind a debounce.
+- Market intelligence engine over the Pakistan Stock Exchange: scrapers, document chunking into a vector store, retrieval layer on Spring Boot, predictions graded by deterministic code rather than by the model.
+
+## Background
+BS Computer Science, The Islamia University of Bahawalpur, 2021 to 2025. Harvard CS50x and CS50 AI, Java Programming I (University of Helsinki), data structures and algorithms (Boot.dev). Earlier: Python developer at DevFor. President of a university arts and photography society.
