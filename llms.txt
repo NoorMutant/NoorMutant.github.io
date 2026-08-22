@@ -12,7 +12,7 @@ Angular, TypeScript, RxJS, Ember, Java, Spring Boot, PostgreSQL, Python.
 
 ## Work
 - Live market data platform: real time indices, intraday charting, company and fund data for MENA markets.
-- Investor relations widgets: embeddable widgets delivering live market data into the sites of financial institutions. A parent application routes navigation and pushes personalisation into sandboxed frames over postMessage, so a composed site behaves as one application. A working demo of this technique runs on the site.
+- Investor relations widgets: embeddable widgets delivering live market data into the sites of financial institutions. A parent application routes navigation and pushes personalisation into sandboxed frames over postMessage, so a composed site behaves as one application.
 - National stock exchange website: frontend and backend, live prices, listings and regulatory disclosures.
 - Private market platform: crawlers, scheduled jobs, and admin tooling giving control over stale records.
 

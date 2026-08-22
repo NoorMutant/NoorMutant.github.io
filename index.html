@@ -175,22 +175,6 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
 .certs span{font:400 .95rem/1.4 "IBM Plex Sans",sans-serif}
 .certs em{font:400 .72rem/1.4 "IBM Plex Mono",monospace;font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--jade);flex:none}
 
-/* ===== live demo ===== */
-.steps{list-style:none;margin:1.7rem 0 0;padding:0;display:grid;gap:.55rem;max-width:62ch}
-.steps li{font:400 .9rem/1.55 "IBM Plex Sans",sans-serif;color:var(--dim);display:flex;gap:.75rem;align-items:baseline}
-.steps b{font:500 .7rem/1.7 "IBM Plex Mono",monospace;color:var(--amber);border:1px solid var(--glass-line);border-radius:50%;min-inline-size:1.7rem;text-align:center;flex:none}
-.demo{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(17rem,100%),1fr));margin-top:1.9rem}
-.frame{margin:0;border:1px solid var(--glass-line);border-radius:var(--r);overflow:hidden;background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.frame figcaption{font:500 .68rem/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--fg);padding:.9rem 1rem;border-bottom:1px solid var(--glass-line)}
-.frame figcaption span{color:var(--jade);margin-inline-start:.5rem}
-.frame iframe{display:block;width:100%;height:9rem;border:0;overflow:hidden;transition:height .35s var(--ease);background:#121917}
-:root[data-theme=light] .frame iframe{background:#FBF8F2}
-.bus{grid-column:1/-1;border:1px solid var(--glass-line);border-radius:var(--r);padding:1.05rem 1.2rem;background:var(--glass);font:400 .78rem/1.9 "IBM Plex Mono",monospace;color:var(--dim)}
-.bus p{margin:0;max-width:none}
-.bus .hint{font-family:"IBM Plex Sans",sans-serif;line-height:1.65}
-.bus b{color:var(--amber);font-weight:500}
-.bus i{color:var(--jade);font-style:normal}
-.bus .no{color:#D5564E}
 </style>
 </head>
 <body>
@@ -203,7 +187,6 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
     <nav><ul>
       <li class="hide-sm"><a href="#work">Work</a></li>
       <li class="hide-sm"><a href="#approach">Approach</a></li>
-      <li class="hide-sm"><a href="#demo">Live</a></li>
       <li class="hide-sm"><a href="#background">Background</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><button class="toggle" id="themeBtn" aria-label="Switch colour theme" aria-pressed="false">
@@ -271,23 +254,6 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
     <h2 class="rv">Fix causes, not symptoms</h2>
     <blockquote class="quote rv">A bigger pool, a longer timeout and a retry loop will quieten almost any concurrency bug. None of them remove it.</blockquote>
     <p class="lead rv">On my own project, transactions were deadlocking while the connection pool starved. Rather than tuning the numbers, every transaction now takes its row locks in one consistent order, which makes a lock cycle impossible, and requests are batched behind a debounce so the pool is never flooded. One invariant at the source instead of patches at every call site. That is the habit I bring to production work.</p>
-  </section>
-
-  <section id="demo" class="wrap">
-    <span class="eyebrow rv">Live, not a screenshot</span>
-    <h2 class="rv">Two frames, one application</h2>
-    <p class="lead rv">This is the technique behind the investor relations work, running on this page. Both panels below are real sandboxed iframes on a different origin. They cannot navigate themselves and they never learn who you are. Every click becomes a request to this page, which decides what happens.</p>
-    <ol class="steps rv">
-      <li><b>1</b> Press a button inside a panel. It cannot act on its own, it can only ask.</li>
-      <li><b>2</b> This page checks the request against a routing guard, then allows or refuses it.</li>
-      <li><b>3</b> Allowed views are rendered back into the panel that asked for them.</li>
-      <li><b>4</b> Each panel measures itself and tells the page how tall to be, so nothing ever scrolls inside a frame.</li>
-    </ol>
-    <div class="demo rv">
-      <figure class="frame"><figcaption>Panel A <span>market widget</span></figcaption><iframe id="fa" title="Embedded market widget" sandbox="allow-scripts"></iframe></figure>
-      <figure class="frame"><figcaption>Panel B <span>disclosures widget</span></figcaption><iframe id="fb" title="Embedded disclosures widget" sandbox="allow-scripts"></iframe></figure>
-      <div class="bus" id="bus" role="log" aria-live="polite" aria-label="Message bus between this page and the panels"><p class="hint">Messages appear here. Try <b>Price chart</b> in Panel A, then <b>Admin console</b> in Panel B to watch this page refuse a view that panel is not permitted to show.</p></div>
-    </div>
   </section>
 
   <section id="background" class="wrap">
@@ -406,85 +372,6 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
     },{passive:true});
   });
 
-
-  /* ---- live postMessage demo: this page is the only router ---- */
-  (function(){
-    var fa=document.getElementById("fa"), fb=document.getElementById("fb"), bus=document.getElementById("bus");
-    if(!fa||!fb||!bus)return;
-    var INNER="<script>function fit(){parent.postMessage({type:'height',px:document.documentElement.scrollHeight},'*');}addEventListener('load',fit);setTimeout(fit,50);setTimeout(fit,400);if(window.ResizeObserver){new ResizeObserver(fit).observe(document.documentElement);}document.body.addEventListener('click',function(e){var b=e.target.closest('[data-go]');if(!b)return;parent.postMessage({type:'navigate',to:b.getAttribute('data-go'),label:b.getAttribute('data-label')},'*');});addEventListener('message',function(e){var d=e.data||{};var v=document.getElementById('v');if(!v)return;if(d.type==='render'){v.textContent='Now showing: '+d.label;v.className='view ok';}if(d.type==='refuse'){v.textContent='Refused by the page: '+d.label;v.className='view no';}if(d.type==='identity'){v.textContent='Overview for '+d.items.join(', ');v.className='view';}if(d.type==='theme'){document.body.className=d.mode==='light'?'light':'';}fit();});\u003c/script>";
-
-    function doc(accent,title,rows){
-      return "<!DOCTYPE html><html lang=en><head><meta charset=utf-8><style>"+
-        "html,body{overflow:hidden}"+"body{margin:0;padding:14px 15px 15px;font:14px/1.5 ui-sans-serif,system-ui,sans-serif;background:#121917;color:#EAE3D8;transition:background .3s,color .3s}"+"body.light{background:#FBF8F2;color:#14100C}"+
-        "body.light{color:#14100C}"+
-        "h4{margin:0 0 2px;font-size:14px;font-weight:600}"+
-        ".sub{font-size:12px;opacity:.72;margin:0 0 11px}"+
-        ".view{font-size:12px;margin:0 0 12px;padding:8px 10px;border-radius:8px;border:1px dashed currentColor;opacity:.8}"+
-        ".view.ok{border-style:solid;border-color:"+accent+";color:"+accent+";opacity:1}"+
-        ".view.no{border-style:solid;border-color:#D5564E;color:#D5564E;opacity:1}"+
-        "button{display:block;width:100%;text-align:left;font:13px/1.3 inherit;cursor:pointer;background:"+accent+"22;color:"+accent+";border:1px solid "+accent+"70;border-radius:9px;padding:9px 11px;margin:0 0 7px}"+
-        "button:hover{background:"+accent+"38}"+
-        "button:focus-visible{outline:2px solid "+accent+";outline-offset:2px}"+
-        "button small{display:block;opacity:.72;font-size:11px;margin-top:3px;color:inherit}"+
-        "@media (prefers-reduced-motion:reduce){*{transition:none!important}}"+
-      "</style></head><body><h4>"+title+"</h4>"+
-      "<p class=sub>Sandboxed iframe. It cannot navigate itself.</p>"+
-      "<p class=view id=v>Waiting for the page</p>"+rows+INNER+"</body></html>";
-    }
-    function btn(go,label,desc){
-      return "<button data-go="+go+" data-label=\""+label+"\">"+label+"<small>"+desc+"</small></button>";
-    }
-    fa.srcdoc=doc("#E2703A","Market widget",
-      btn("chart","Price chart","this panel is allowed to show it")+
-      btn("news","Company news","this panel is allowed to show it"));
-    fb.srcdoc=doc("#86C2A5","Disclosures widget",
-      btn("filings","Regulatory filings","this panel is allowed to show it")+
-      btn("admin","Admin console","not permitted, the page will refuse"));
-
-    var allow={A:["chart","news"],B:["filings"]}, frames={};
-    function log(html,cls){
-      var h=bus.querySelector(".hint"); if(h)h.remove();
-      var p=document.createElement("p"); if(cls)p.className=cls; p.innerHTML=html; bus.appendChild(p);
-      while(bus.children.length>5)bus.removeChild(bus.firstChild);
-    }
-    addEventListener("message",function(e){
-      /* the frames are sandboxed without allow-same-origin, so their origin is
-         "null". identity comes from comparing the source window, never from
-         anything inside the message itself. */
-      var who=e.source===fa.contentWindow?"A":e.source===fb.contentWindow?"B":null;
-      if(!who)return;
-      var d=e.data||{};
-      if(d.type==="height"){ (who==="A"?fa:fb).style.height=Math.max(120,d.px)+"px"; return; }
-      if(d.type!=="navigate")return;
-      log("Panel <b>"+who+"</b> asks for <i>"+d.label+"</i>");
-      if(allow[who].indexOf(d.to)===-1){
-        log("&nbsp;&nbsp;the page <span class=no>refuses</span>, Panel "+who+" may not show that");
-        frames[who].contentWindow.postMessage({type:"refuse",label:d.label},"*");
-        return;
-      }
-      log("&nbsp;&nbsp;the page allows it and renders <i>"+d.label+"</i> into Panel "+who);
-      frames[who].contentWindow.postMessage({type:"render",label:d.label},"*");
-    });
-    function push(mode){
-      [fa,fb].forEach(function(x){
-        try{x.contentWindow.postMessage({type:"theme",mode:mode},"*");}catch(err){}
-      });
-    }
-    var ready=0;
-    function up(f,k){
-      frames[k]=f;
-      if(++ready<2)return;
-      push(document.documentElement.dataset.theme);
-      [fa,fb].forEach(function(x){x.contentWindow.postMessage({type:"identity",items:["ARAMCO","EMAAR"]},"*");});
-      log("the page pushed a watchlist down from its own session, neither panel asked who you are");
-    }
-    fa.addEventListener("load",function(){up(fa,"A");});
-    fb.addEventListener("load",function(){up(fb,"B");});
-    var tb=document.getElementById("themeBtn");
-    if(tb)tb.addEventListener("click",function(){
-      setTimeout(function(){push(document.documentElement.dataset.theme);},0);
-    });
-  })();
 
   /* custom cursor: fine pointers only, off for touch and reduced motion */
   var fine=matchMedia("(hover:hover) and (pointer:fine)");
