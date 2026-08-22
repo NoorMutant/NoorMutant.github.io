@@ -11,7 +11,9 @@ CV: https://drive.google.com/file/d/1sqizlP73ALhBEn-fa6lcqaB9_A3ACTMI/view?usp=s
 Angular, TypeScript, RxJS, Ember, Java, Spring Boot, PostgreSQL, Python.
 
 ## Work
-- Live market data platform: real time indices, intraday charting, company and fund data for MENA markets.
+All of the following was built at Global Financial Media, part of Mubasher Information Group.
+- Mubasher Info (https://english.mubasher.info/): live market data platform for MENA markets, real time indices, intraday charting, company and fund data. Worked on the community section, frontend.
+- Sharikat Mubasher (https://en.sharikatmubasher.com/): private equity and business intelligence platform for the region, company directory, investor resources, services marketplace, fintech coverage. Frontend.
 - Investor relations widgets: embeddable widgets delivering live market data into the sites of financial institutions. A parent application routes navigation and pushes personalisation into sandboxed frames over postMessage, so a composed site behaves as one application.
 - National stock exchange website: frontend and backend, live prices, listings and regulatory disclosures.
 - Private market platform: crawlers, scheduled jobs, and admin tooling giving control over stale records.
