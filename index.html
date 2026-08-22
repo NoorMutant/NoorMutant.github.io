@@ -151,7 +151,7 @@ footer{border-top:1px solid var(--glass-line); padding-block:2.2rem; color:var(-
 /* ================= custom cursor ================= */
 .cur,.cur-ring{position:fixed; top:0; left:0; z-index:90; pointer-events:none; border-radius:50%; opacity:0}
 .cur{inline-size:6px; block-size:6px; background:var(--amber)}
-.cur-ring{inline-size:30px; block-size:30px; border:1px solid color-mix(in oklab,var(--fg) 40%,transparent); transition:inline-size .3s,block-size .3s,background .3s,border-color .3s}
+.cur-ring{inline-size:30px; block-size:30px; border:1px solid color-mix(in oklab,var(--fg) 40%,transparent); transition:inline-size .28s var(--ease),block-size .28s var(--ease),background .3s,border-color .3s; will-change:transform}
 body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color-mix(in oklab,var(--amber) 12%,transparent); border-color:var(--amber)}
 @media (hover:hover) and (pointer:fine){
   body.cursor-on,body.cursor-on a,body.cursor-on button{cursor:none}
@@ -387,12 +387,12 @@ body.cursor-on.hot .cur-ring{inline-size:52px; block-size:52px; background:color
   var x=innerWidth/2,y=innerHeight/2,rx=x,ry=y,raf=null,bound=false;
   function loop(){
     rx+=(x-rx)*.16; ry+=(y-ry)*.16;
-    ring.style.transform="translate3d("+(rx-15)+"px,"+(ry-15)+"px,0)";
+    ring.style.transform="translate3d("+rx+"px,"+ry+"px,0) translate(-50%,-50%)";
     raf=(Math.abs(x-rx)>.1||Math.abs(y-ry)>.1)?requestAnimationFrame(loop):null;
   }
   function move(e){
     x=e.clientX; y=e.clientY;
-    dot.style.transform="translate3d("+(x-3)+"px,"+(y-3)+"px,0)";
+    dot.style.transform="translate3d("+x+"px,"+y+"px,0) translate(-50%,-50%)";
     if(!raf)raf=requestAnimationFrame(loop);
   }
   function over(e){
